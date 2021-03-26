@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>FlyShift</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<%# <!DOCTYPE html> %>
+<%# <html> %>
+  <%# <head> %>
+    <%# <title>FlyShift</title> %>
+    <%# <%= csrf_meta_tags %> 
+    <%# <%= csp_meta_tag %> 
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%# <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
+  <%# </head> %>
+<!DOCTYPE html>
+  <html lang="ja">
+    <head>
+      <meta charset="UTF-8">
+      <title>Fly_Shift</title>
+      <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+      <%= stylesheet_link_tag 'application', media: 'all'%>
+      <script type="text/javascript" src="js/openclose.js"></script>
+    </head>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    <small>CopyrightAll Rights Reserved.</small>
+  </footer>
+
 </html>
