@@ -1,14 +1,19 @@
+body {
+	background-image: url("25335.jpg"); 
+	/* backdrop-filter: blur(2px); */
+}
 
 .wrapper {
 	display: flex;
   }
   .side-bar {
-	background-color: #253141;
 	width: 300px;
 	height: 100vh;
   }
   
   .side-bar-header {
+	/* border-right: solid 2px; */
+	backdrop-filter: blur(2px);
 	height: 100px;
 	padding: 0 40px;
 	display: flex;
@@ -17,8 +22,8 @@
   }
   
   .header-name {
-	font-size: 43px;
-	color: #fafafa;
+	font-size: 46px;
+	color: #0d10e9;
 	text-decoration: none;
   }
   
@@ -31,7 +36,10 @@
   }
   
   .rooms {
-	background-color: #2F3E51;
+	backdrop-filter: blur(2px);
+	border-right: solid 2px;
+
+	/* background-color: #2F3E51; */
 	height: calc(100vh - 100px);
 	padding: 0 20px;
 	overflow: scroll;
@@ -42,13 +50,14 @@
   }
   
   .room-name {
+	
 	text-decoration: none;
 	color: white;
   }
 
   .name{
 	display: block;
-	color: thistle;
+	color: rgb(27, 38, 196);
 	text-decoration: none;
 	font-size: 27px;
 	margin: 20px;
@@ -56,11 +65,16 @@
   }
   
   .chat {
-	background-color: #FFFFFF;
+	/* background-color: #FFFFFF; */
 	width: calc(100vw - 300px);
   }
   
   .chat-header {
+	border-bottom: solid 2px;
+	backdrop-filter: blur(2px);
+
+
+	/* background-color: rgb(41, 110, 189); */
 	height: 100px;
 	padding: 0 40px;
 	display: flex;
@@ -68,7 +82,7 @@
   }
   
   .header-title {
-	color: #333;
+	/* color: #333; */
 	font-size: 24px;
 	margin-top: 36px;
   }
@@ -79,13 +93,13 @@
   
   .header-button a {
 	text-decoration: none;
-	border: 1px solid darkred;
+	border: 2px solid darkred;
 	color: darkred;
 	padding: 20px;
   }
   
   .messages {
-	background-color: #FAFAFA;
+	/* background-color: #FAFAFA; */
 	height: calc(100vh - 100px - 90px);
 	padding: 46px 40px 0;
 	overflow: scroll;
@@ -121,14 +135,14 @@
   }
   
   .form {
-	background-color: #DDDDDD;
+	/* background-color: #DDDDDD; */
 	height: 90px;
 	padding: 20px 40px;
 	display: flex;
   }
   
   .form-input {
-	background-color: white;
+	/* background-color: white; */
 	width: 100%;
 	display: flex;
   }
@@ -141,7 +155,7 @@
   }
   
   .form-submit {
-	background-color: #38AEF0;
+	/* background-color: #38AEF0; */
 	border: none;
 	color: white;
 	font-size: 16px;
@@ -152,7 +166,7 @@
   
   .form-image {
 	font-size: 12px;
-	background-color: lightblue;
+	/* background-color: lightblue; */
 	color: white;
 	padding: 12px;
 	width: 60px;
