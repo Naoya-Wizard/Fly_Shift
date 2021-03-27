@@ -91,12 +91,12 @@ body {
 	margin-top: 40px;
   }
   
-  .header-button a {
+  /* .header-button a {
 	text-decoration: none;
 	border: 2px solid darkred;
 	color: darkred;
 	padding: 20px;
-  }
+  } */
   
   .messages {
 	/* background-color: #FAFAFA; */
