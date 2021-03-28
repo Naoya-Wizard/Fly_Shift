@@ -1,0 +1,36 @@
+.form-image{
+    font-size: 18px;
+    display: inline;
+    color: black;
+}
+.days{
+    background-color: darkgrey;
+    display: flex;
+    margin-top: 20px;
+}
+.first-day{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.day{
+    margin-top: 30px;
+    margin-left: 80px;
+}
+.first-shift{
+    margin-left: 3px;
+    margin-top: 3px;
+}
+.shifts{
+    margin: 20px;
+    display: flex;
+    height: 20px;
+}
+.shift{
+    margin-top: 3px;
+    margin-left: 27px;
+
+}
+.member{
+    width: 70px;
+    
+}
