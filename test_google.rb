@@ -4,7 +4,6 @@ require 'googleauth/stores/file_token_store'
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
 user_id = 'naoya.f.1030@gmail.com'
 
-secret=ENV['GOOGLE_CALENDAR_JSON']
 client_id = Google::Auth::ClientId.from_file("client_id.json")
 token_store = Google::Auth::Stores::FileTokenStore.new(file: 'google_api.yml')
 scope = 'https://www.googleapis.com/auth/calendar'

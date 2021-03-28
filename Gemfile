@@ -57,6 +57,6 @@ gem 'pry-rails'
 
 gem "simple_calendar", "~> 2.0"
 
-# gem 'google_drive'
+gem 'google_drive'
 
 gem 'googleauth'
