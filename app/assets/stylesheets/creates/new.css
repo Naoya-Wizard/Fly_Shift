@@ -1,36 +1,29 @@
-.form-image{
-    font-size: 18px;
-    display: inline;
-    color: black;
+.input-data{
+    margin-left: 20px;
+    font-size: 16px;
+}
+p{
+    font-size: 20px;
+}
+.form{
+    width: 100px;
+    margin-top: 10px;
+    border-left: solid darkmagenta;
+    border-top: solid darkmagenta;
+    padding-top: 3px;
+    padding-left: 3px;
 }
 .days{
-    background-color: darkgrey;
+    width: 600px;
+    margin-left: 130px;
     display: flex;
-    margin-top: 20px;
+    justify-content: space-between;
 }
-.first-day{
-    margin-left: 100px;
-    margin-top: 30px;
-}
-.day{
-    margin-top: 30px;
-    margin-left: 80px;
-}
-.first-shift{
-    margin-left: 3px;
-    margin-top: 3px;
-}
-.shifts{
-    margin: 20px;
+.members{
+    width: 760px;
     display: flex;
-    height: 20px;
-}
-.shift{
-    margin-top: 3px;
-    margin-left: 27px;
-
+    justify-content: space-between;
 }
 .member{
-    width: 70px;
-    
+    width: 80px;
 }

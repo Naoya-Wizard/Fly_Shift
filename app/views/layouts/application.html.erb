@@ -17,7 +17,13 @@
       <%= stylesheet_link_tag 'application', media: 'all'%>
       <script type="text/javascript" src="js/openclose.js"></script>
     </head>
-
+  <header>
+    <div class="header">
+      <%= link_to "FlyShift", root_path, class: "appname" %>
+      <%= link_to "シフト作成", new_create_path, class: "sakusei" %>
+      <div class="chuushutu">シフト抽出</div>
+    </div>
+  </header>
   <body>
     <%= yield %>
   </body>

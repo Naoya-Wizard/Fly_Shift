@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+ body {
+	background-image: url("b081.jpg"); 
+}
+.header {
+	display: flex;
+	height: 100px;
+  }
+
+.appname{
+	font-size: 40px;
+	margin-left: 5px;
+}
+.sakusei{
+	font-size: 20px;
+	margin-left: 80px;
+	margin-top: 24px;
+}
+.chuushutu{
+	font-size: 20px;
+	margin-left: 80px;
+	margin-top: 24px;
+	font-family: 'Sacramento', cursive;
+
+}
