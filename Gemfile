@@ -60,3 +60,5 @@ gem "simple_calendar", "~> 2.0"
 gem 'google_drive'
 
 gem 'googleauth'
+
+gem 'active_hash'

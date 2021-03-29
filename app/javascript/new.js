@@ -57,8 +57,26 @@ document.getElementById("send").addEventListener("click", send);
 // window.addEventListener("click", send);
 
 function send(){
-  console.log("hello")
-  const values = document.getElementById("shift1")
-  console.log(values.value)
+  var members = []
+  var array1 = []
+  
+  for (let i = 0; i < 12; i++){
+    if (document.getElementById(`shift${i+1}`).textContent != ""){
+    members.push(document.getElementById(`shift${i+1}`).textContent)
+    console.log(members)
+    }
+  }
+  
+  for (let k = 0; k < members.length; k++){
+    var subarray = []
+    subarray.push(members[k])
+    for (let i = 0; i < 30; i++) {
+      const values = document.getElementById(`shifts-${members[k]}-${i+1}`)
+      subarray.push(values.value);
+      
+    };
+    array1.push(subarray)
+    console.log(array1)
+ }
 }
 // document.getElementById("hannei").addEventListener("click", )

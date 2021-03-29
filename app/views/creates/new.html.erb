@@ -26,6 +26,7 @@
       </p>
 </div>
 
+<%= form_with model:@create, url: "#", local: true do |f| %>
 
 <table id="days-member">
   <tr id="test">
@@ -79,14 +80,16 @@ var countUpValue = 0;
     let IntoMemberNext= "shift" + (countUpValue + 2)
     const InnerHTMLpoint = document.getElementById(IntoMember);
     InnerHTMLpoint.innerHTML = `${memberID.value}`;
-    for (let i = 0; i < 30; i++) {
-      InnerHTMLpoint.insertAdjacentHTML('afterend','<td><select><option >A</option><option >B</option><option >C</option><option >D</option><option >A(当)</option><option >A/休</option><option >休</option><option >特休</option><option >有休</option></select></td>');
+    for (i = 30; i > 0; i--) {
+      InnerHTMLpoint.insertAdjacentHTML('afterend', `<td><%= f.collection_select(:shift, Shift.all, :id, :name, {}, {class:"select-box", id:"shifts-${memberID.value}-${i}"})%></td>`);
     };
     document.getElementById('member1').value = ''
     countUpValue++;
     document.getElementById("count").innerHTML = `${countUpValue}人追加/12人まで`;
   };
 </script>
+
+<%end%>
 
 
 
