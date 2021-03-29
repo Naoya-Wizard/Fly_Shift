@@ -15,6 +15,7 @@
  */
  body {
 	background-image: url("b081.jpg"); 
+    min-width:3300px; 
 }
 .header {
 	display: flex;
