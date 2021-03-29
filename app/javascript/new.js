@@ -53,8 +53,12 @@ function test(){
 //     document.getElementById("count").innerHTML = `${countUpValue}人追加/8人まで`;
 // };
 
-window.addEventListener("click", send);
+document.getElementById("send").addEventListener("click", send);
+// window.addEventListener("click", send);
 
 function send(){
   console.log("hello")
+  const values = document.getElementById("shift1")
+  console.log(values.value)
 }
+// document.getElementById("hannei").addEventListener("click", )
