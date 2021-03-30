@@ -4,4 +4,7 @@ class CreatesController < ApplicationController
     def new
         @create = Create.new
     end
+    def create
+        binding.pry
+    end
 end

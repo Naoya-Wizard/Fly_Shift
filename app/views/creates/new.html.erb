@@ -1,22 +1,9 @@
-<div class="input-data">
-  <div>作成するシフトの月を選択してください
-    <p>
-      <select id="month">
-        <option >-?--</option>
-        <option >1月</option>
-        <option >2月</option>
-        <option >3月</option>
-        <option >4月</option>
-        <option >5月</option>
-        <option >6月</option>
-        <option >7月</option>
-        <option >8月</option>
-        <option >9月</option>
-        <option >10月</option>
-        <option >11月</option>
-        <option >12月</option>
-      </select>
-    </p>
+<%= form_with model:@create, url: creates_path, local: true do |f| %>
+
+<div class="input-data">作成するシフトの月を選択してください
+  <div>
+      <%= f.collection_select(:month, Month.all, :id, :name, {}, {class:"month", id:"month",})%>
+  </div>
 </div>
 <div> 勤務する人を全て入力してください 
       <p>
@@ -26,7 +13,7 @@
       </p>
 </div>
 
-<%= form_with model:@create, url: "#", local: true do |f| %>
+
 
 <table id="days-member">
   <tr id="test">
@@ -70,14 +57,17 @@
   </tr>
 
 </table>
-<button type="button" name="name" value="value" id="send" >button</button>
+
+<%# <button type="button" name="name" value="value" id="send" >button</button> %>
+<%= f.submit '投稿する' , id: "send" %>
+<%= f.text_field :shift , id: "all-form" %>
+<%# <div id="all-form">hoge--</div> %>
 
 <script type="text/javascript">
 var countUpValue = 0;
   function member(){
     const memberID = document.getElementById("member1");
     let IntoMember = "shift" + (countUpValue + 1)
-    let IntoMemberNext= "shift" + (countUpValue + 2)
     const InnerHTMLpoint = document.getElementById(IntoMember);
     InnerHTMLpoint.innerHTML = `${memberID.value}`;
     for (i = 30; i > 0; i--) {
@@ -89,98 +79,4 @@ var countUpValue = 0;
   };
 </script>
 
-<%end%>
-
-
-
-
-
-
-
-
-
-
-<%# <div class="input-data">
-  <div>作成するシフトの月を選択してください
-    <p>
-      <select id="month">
-        <option >-?--</option>
-        <option >1月</option>
-        <option >2月</option>
-        <option >3月</option>
-        <option >4月</option>
-        <option >5月</option>
-        <option >6月</option>
-        <option >7月</option>
-        <option >8月</option>
-        <option >9月</option>
-        <option >10月</option>
-        <option >11月</option>
-        <option >12月</option>
-      </select>
-    </p>
-  </div>
-  <div> 勤務する人を全て入力してください 
-      <p>
-        <input id="member1" type="text" name="name" size="10" placeholder="例) 鈴木">
-        <button type="button" id="hannei" onclick="member();" >反映</button>
-        <div id="count">0人追加/8人まで</div>
-      </p>
-  </div>
-  <div class="form" id="mainhtml">
-    
-  </div>
-</div>
-
-
-<script type="text/javascript">
-var countUpValue = 0;
-  function member(){
-    const memberID = document.getElementById("member1");
-    let IntoMember = "intomember" + countUpValue
-    const InnerHTMLpoint = document.getElementById(IntoMember);
-    InnerHTMLpoint.innerHTML = `${memberID.value}`;
-    for (let i = 0; i < 7; i++) {
-      InnerHTMLpoint.insertAdjacentHTML('afterend','  <tr id="test2">
-    <th class="fixed02">member</th>
-    <td><select><option >---</option><option >A</option><option >B</option><option >C</option><option >D</option><option >A(当)</option><option >A/休</option><option >休</option><option >特休</option><option >有休</option></select></td>
-    <td>テキスト</td>
-    <td>テキスト</td>
-    <td>テキスト</td>
-    <td>テキスト</td>
-  </tr>
-');
-    };
-    document.getElementById('member1').value = ''
-    countUpValue++;
-    document.getElementById("count").innerHTML = `${countUpValue}人追加/8人まで`;
-};
-</script>
-
-
-<%# <div class="days" id="days">
-    </div>
-    <div class="members">
-      <p class="member" id="intomember0"></p>
-    </div>
-    <div class="members">
-      <p class="member" id="intomember1"></p>
-    </div>
-     <div class="members">
-      <p class="member" id="intomember2"></p>
-    </div>
-     <div class="members">
-      <p class="member" id="intomember3"></p>
-    </div>
-     <div class="members">
-      <p class="member" id="intomember4"></p>
-    </div>
-     <div class="members">
-      <p class="member" id="intomember5"></p>
-    </div>
-     <div class="members">
-      <p class="member" id="intomember6"></p>
-    </div>
-     <div class="members">
-      <p class="member" id="intomember7"></p>
-    </div> %>
+<% end %>
