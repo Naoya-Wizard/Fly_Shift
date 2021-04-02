@@ -1,37 +1,102 @@
-<div class="wrapper">
-  <div class="side-bar">
-    <%= render "side_bar" %>
+<%= form_with model:@create, url: creates_path, local: true do |f| %>
+
+<div class="input-data">作成するシフトの月を選択してください
+  <div>
+      <%= f.collection_select(:month_id, Month.all, :id, :name, {}, {class:"month", id:"month",})%>
   </div>
-  <div class="chat">
-    <%= render "left_ber" %>
-  <div class="form-input">
-    <div class="form-image">
-      <div>作成するシフトの月を選択してください
-        <p>
-          <select name="month">
-            <option >1月</option>
-            <option >2月</option>
-            <option >3月</option>
-            <option >4月</option>
-            <option >5月</option>
-            <option >6月</option>
-            <option >7月</option>
-            <option >8月</option>
-            <option >9月</option>
-            <option >10月</option>
-            <option >11月</option>
-            <option >12月</option>
-          </select>
-        </p>
-      </div>
-      <div> 勤務する人を全て入力してください 
-        <div>
-          <input type="text" name="name" size="10" placeholder="例) 鈴木">
-          <input type="text" name="name" size="10">
-          <input type="text" name="name" size="10">
-          <input type="text" name="name" size="10">
-          <input type="text" name="name" size="10">
-        </div>
+</div>
+<div> 勤務する人を全て入力してください 
+      <p>
+        <input id="member1" type="text" name="name" size="10" placeholder="例) 鈴木">
+        <button type="button" id="hannei" onclick="member();" >反映</button>
+        <div id="count">0人追加/12人まで</div>
+      </p>
 </div>
 
 
+
+<table id="days-member">
+  <tr id="test">
+    <th class="fixed01">見出し</th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift1"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift2"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift3"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift4"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift5"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift6"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift7"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift8"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift9"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift10"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift11"></th>
+  </tr>
+  <tr>
+    <th class="fixed02" id="shift12"></th>
+  </tr>
+</table>
+
+<%= f.submit '投稿する' , id: "send" %>
+<%= f.text_field :shift, id: "all-form1" %>
+<%= f.text_field :name1, id: "name1"%>
+<%= f.text_field :shift2 , id: "all-form2" %>
+<%= f.text_field :name2, id: "name2"%>
+<%= f.text_field :shift3 , id: "all-form3" %>
+<%= f.text_field :name3, id: "name3"%>
+<%= f.text_field :shift4 , id: "all-form4" %>
+<%= f.text_field :name4, id: "name4"%>
+<%= f.text_field :shift5 , id: "all-form5" %>
+<%= f.text_field :name5, id: "name5"%>
+<%= f.text_field :shift6 , id: "all-form6" %>
+<%= f.text_field :name6, id: "name6"%>
+<%= f.text_field :shift7 , id: "all-form7" %>
+<%= f.text_field :name7, id: "name7"%>
+<%= f.text_field :shift8 , id: "all-form8" %>
+<%= f.text_field :name8, id: "name8"%>
+<%= f.text_field :shift9 , id: "all-form9" %>
+<%= f.text_field :name9, id: "name9"%>
+<%= f.text_field :shift10 , id: "all-form10" %>
+<%= f.text_field :name10, id: "name10"%>
+<%= f.text_field :shift11 , id: "all-form11" %>
+<%= f.text_field :name11, id: "name11"%>
+<%= f.text_field :shift12 , id: "all-form12" %>
+<%= f.text_field :name12, id: "name12"%>
+
+<script type="text/javascript">
+var countUpValue = 0;
+  function member(){
+    const memberID = document.getElementById("member1");
+    let IntoMember = "shift" + (countUpValue + 1)
+    const InnerHTMLpoint = document.getElementById(IntoMember);
+    InnerHTMLpoint.innerHTML = `${memberID.value}`;
+    for (i = 30; i > 0; i--) {
+      InnerHTMLpoint.insertAdjacentHTML('afterend', `<td><select id="shifts-${memberID.value}-${i}"><option>A</option><option>B</option><option>C</option><option>D</option><option>A(当)</option><option>A/休</option><option>休</option><option>有休</option><option >特休</option></select></td>`);
+    };
+    document.getElementById('member1').value = ''
+    countUpValue++;
+    document.getElementById("count").innerHTML = `${countUpValue}人追加/12人まで`;
+  };
+</script>
+
+<% end %>
