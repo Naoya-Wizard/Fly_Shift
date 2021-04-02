@@ -1,8 +1,15 @@
-<%# <div class="wrapper">
-  <div class="side-bar">
-    <%= render "side_bar" %>
-  <%# </div> %>
-  <%# <div class="chat"> %>
-    <%# <%= render "left_ber" %> 
-  <%# </div> %>
-<%# </div> %> 
+<% @shift.each do | shift | %>
+<%= link_to create_path(shift), class: "link" do %>
+  <div class="start">
+  <div> <%= "これは#{shift.month.name}のシフトです"%> </div>
+  <div> <%= "#{shift.updated_at}に作成しました"%> </div>
+      <% array = shift.shift.split(",") %>
+      <% days = Date.new(2021, shift.month_id, 1) %>
+      <% array.length.times do |i| %>
+        <% if i % ((days + 1.month - 1).day) == 0 %>
+          <%= array[i] %>
+        <%end%>
+      <% end %>
+  </div>
+<% end %>
+<% end %>

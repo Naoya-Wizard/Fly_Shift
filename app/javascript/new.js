@@ -15,6 +15,7 @@ function send(){
     if (document.getElementById(`shift${i+1}`).textContent != ""){
     members.push(document.getElementById(`shift${i+1}`).textContent)
     console.log(members)
+    document.getElementById(`name${i+1}`).value = document.getElementById(`shift${i+1}`).textContent;
     }
   }
   for (let k = 0; k < members.length; k++){
@@ -26,13 +27,13 @@ function send(){
     };
     allarray.push(subarray)
     console.log(allarray)
-    document.getElementById("all-form").value = allarray;
+    document.getElementById("all-form1").value = allarray;
     // document.getElementById("all-form").innerHTML = `${allarray}`;
     // setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
     document.getElementById("send").addEventListener("click", (e) => {
       e.preventDefault()
   
-    const form = document.getElementById("all-form");
+    const form = document.getElementById("all-form1");
     const formData = new FormData(form);
     const XHR = new XMLHttpRequest();
     XHR.open("POST", "/creates", true);

@@ -2,7 +2,7 @@
 
 <div class="input-data">作成するシフトの月を選択してください
   <div>
-      <%= f.collection_select(:month, Month.all, :id, :name, {}, {class:"month", id:"month",})%>
+      <%= f.collection_select(:month_id, Month.all, :id, :name, {}, {class:"month", id:"month",})%>
   </div>
 </div>
 <div> 勤務する人を全て入力してください 
@@ -55,13 +55,33 @@
   <tr>
     <th class="fixed02" id="shift12"></th>
   </tr>
-
 </table>
 
-<%# <button type="button" name="name" value="value" id="send" >button</button> %>
 <%= f.submit '投稿する' , id: "send" %>
-<%= f.text_field :shift , id: "all-form" %>
-<%# <div id="all-form">hoge--</div> %>
+<%= f.text_field :shift, id: "all-form1" %>
+<%= f.text_field :name1, id: "name1"%>
+<%= f.text_field :shift2 , id: "all-form2" %>
+<%= f.text_field :name2, id: "name2"%>
+<%= f.text_field :shift3 , id: "all-form3" %>
+<%= f.text_field :name3, id: "name3"%>
+<%= f.text_field :shift4 , id: "all-form4" %>
+<%= f.text_field :name4, id: "name4"%>
+<%= f.text_field :shift5 , id: "all-form5" %>
+<%= f.text_field :name5, id: "name5"%>
+<%= f.text_field :shift6 , id: "all-form6" %>
+<%= f.text_field :name6, id: "name6"%>
+<%= f.text_field :shift7 , id: "all-form7" %>
+<%= f.text_field :name7, id: "name7"%>
+<%= f.text_field :shift8 , id: "all-form8" %>
+<%= f.text_field :name8, id: "name8"%>
+<%= f.text_field :shift9 , id: "all-form9" %>
+<%= f.text_field :name9, id: "name9"%>
+<%= f.text_field :shift10 , id: "all-form10" %>
+<%= f.text_field :name10, id: "name10"%>
+<%= f.text_field :shift11 , id: "all-form11" %>
+<%= f.text_field :name11, id: "name11"%>
+<%= f.text_field :shift12 , id: "all-form12" %>
+<%= f.text_field :name12, id: "name12"%>
 
 <script type="text/javascript">
 var countUpValue = 0;
@@ -71,7 +91,7 @@ var countUpValue = 0;
     const InnerHTMLpoint = document.getElementById(IntoMember);
     InnerHTMLpoint.innerHTML = `${memberID.value}`;
     for (i = 30; i > 0; i--) {
-      InnerHTMLpoint.insertAdjacentHTML('afterend', `<td><%= f.collection_select(:shift, Shift.all, :id, :name, {}, {class:"select-box", id:"shifts-${memberID.value}-${i}"})%></td>`);
+      InnerHTMLpoint.insertAdjacentHTML('afterend', `<td><select id="shifts-${memberID.value}-${i}"><option>A</option><option>B</option><option>C</option><option>D</option><option>A(当)</option><option>A/休</option><option>休</option><option>有休</option><option >特休</option></select></td>`);
     };
     document.getElementById('member1').value = ''
     countUpValue++;
