@@ -1,0 +1,79 @@
+<% name_array = []%>
+<% array = shift.shift.split(",") %>
+
+<% days = Date.new(2021, shift.month_id, 1) %>
+<% array.length.times do |i| %>
+    <% if i % ((days + 1.month - 1).day) == 0 %>
+        <%= "#{array[i]}さん" %>
+        <% name_array.push(array[i]) %>
+    <%end%>
+<% end %>
+
+<table class="calendar-container" >
+<tr class="title" >
+<td colspan="7" align="center">2021年1月</td>
+</tr>
+<tr>
+<td>日</td>
+<td>月</td>
+<td>火</td>
+<td>水</td>
+<td>木</td>
+<td>金</td>
+<td>土</td>
+</tr>
+<tr >
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1<div><%= "勤務: #{array[1]}" %></div></td>
+<td>2<div><%= "勤務: #{array[2]}" %></div></td>
+</tr>
+<tr>
+<td>3<div><%= "勤務: #{array[3]}" %></div></td>
+<td>4<div><%= "勤務: #{array[4]}" %></div></td>
+<td>5<div><%= "勤務: #{array[5]}" %></div></td>
+<td>6<div><%= "勤務: #{array[6]}" %></div></td>
+<td>7<div><%= "勤務: #{array[7]}" %></div></td>
+<td>8<div><%= "勤務: #{array[8]}" %></div></td>
+<td>9<div><%= "勤務: #{array[9]}" %></div></td>
+</tr>
+<tr >
+<td>10<div><%= "勤務: #{array[10]}" %></div></td>
+<td>11<div><%= "勤務: #{array[11]}" %></div></td>
+<td>12<div><%= "勤務: #{array[12]}" %></div></td>
+<td>13<div><%= "勤務: #{array[13]}" %></div></td>
+<td>14<div><%= "勤務: #{array[14]}" %></div></td>
+<td>15<div><%= "勤務: #{array[15]}" %></div></td>
+<td>16<div><%= "勤務: #{array[16]}" %></div></td>
+</tr>
+<tr >
+<td>17<div><%= "勤務: #{array[17]}" %></div></td>
+<td>18<div><%= "勤務: #{array[18]}" %></div></td>
+<td>19<div><%= "勤務: #{array[19]}" %></div></td>
+<td>20<div><%= "勤務: #{array[20]}" %></div></td>
+<td>21<div><%= "勤務: #{array[21]}" %></div></td>
+<td>22<div><%= "勤務: #{array[22]}" %></div></td>
+<td>23<div><%= "勤務: #{array[23]}" %></div></td>
+</tr>
+<tr >
+<td>24<div><%= "勤務: #{array[24]}" %></div></td>
+<td>25<div><%= "勤務: #{array[25]}" %></div></td>
+<td>26<div><%= "勤務: #{array[26]}" %></div></td>
+<td>27<div><%= "勤務: #{array[27]}" %></div></td>
+<td>28<div><%= "勤務: #{array[28]}" %></div></td>
+<td>29<div><%= "勤務: #{array[29]}" %></div></td>
+<td>30<div><%= "勤務: #{array[30]}" %></div></td>
+</tr>
+<tr >
+<td>31<div><%= "勤務: #{array[31]}" %></div></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>

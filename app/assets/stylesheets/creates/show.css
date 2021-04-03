@@ -1,0 +1,11 @@
+.calendar-container {
+    width: 800px;
+    margin-left: 100px;
+    border-radius: 5px;
+    background: #e2e0ee;
+    color: #1a1a1a;
+  }
+
+.title{
+    width: 700px;
+  }

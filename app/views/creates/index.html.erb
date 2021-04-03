@@ -7,9 +7,10 @@
       <% days = Date.new(2021, shift.month_id, 1) %>
       <% array.length.times do |i| %>
         <% if i % ((days + 1.month - 1).day) == 0 %>
-          <%= array[i] %>
+          <%= "#{array[i]}さん" %>
         <%end%>
       <% end %>
+      <%= "についてのシフトのデータがあります" %>
   </div>
 <% end %>
 <% end %>
